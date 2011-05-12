@@ -29,7 +29,7 @@ public class Worka {
 
 // Wait a few secs then shutdown
         try {
-            Thread.sleep(10000);
+            Thread.sleep(100000);
         } catch (Exception e) {
         } // Give ourselves time to process
         System.out.println("Stopping Worker Thread.");

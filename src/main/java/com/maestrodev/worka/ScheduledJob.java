@@ -1,20 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package com.maestrodev.worka;
+
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
+
 
 /**
  *
  * @author kplummer
- */
-import java.util.List;
-
-
-/**
- * Complicated construtor to test JSON serialization.
- *
- * @author Greg Haines
  */
 public class ScheduledJob implements Runnable {
 
@@ -22,8 +17,9 @@ public class ScheduledJob implements Runnable {
 
     public ScheduledJob(final Object test) {
         this.test = test;
-        System.out.println("WorkaAction! " + this.test);
-
+        System.out.println("WorkaAction! " + this.test.toString());
+        JSONObject jsonObject = (JSONObject) JSONSerializer.toJSON( this.test );
+        System.out.println("JSON: " + jsonObject.getString("test"));
     }
 
     public void run() {
